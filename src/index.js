@@ -1,5 +1,5 @@
-/* PokeJS
- *********/
+/* poke-js
+ **********/
 
 // Usage:
 // 1. run init with your data obj to set up appropriate getters/setters on vars
