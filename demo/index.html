@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>PokeJS</title>
+  </head>
+  <body>
+    <div>
+      Price:
+      <span id="priceOutput"></span><br />
+      
+      Quantity:
+      <span id="quantityOutput"></span><br />
+
+      Total:
+      <span id="totalOutput"></span><br />
+    </div>
+
+    <label for="price">
+      Price:
+      <input type="range" name="price" id="price" />
+    </label><br />
+
+    <label for="quantity">
+      Quantity:
+      <input type="range" name="quantity" id="quantity" />
+    </label>
+
+    <script src="../dist/index.js"></script>
+    <script>
+      const { init, watch } = Poke
+
+      let data = { price: 5, quantity: 2 }
+      init(data)
+
+      // total output
+      const totalOutput = document.getElementById('totalOutput')
+      watch(() => totalOutput.innerText = data.price * data.quantity)
+      
+
+      // price
+      const priceOutput = document.getElementById('priceOutput')
+      const priceInput = document.getElementById('price')
+      priceInput.addEventListener('change', e => data.price = e.target.value)
+      watch(() => {
+        priceInput.value = data.price
+        priceOutput.innerText = data.price
+      })
+
+      
+      // quantity
+      const quantityOutput = document.getElementById('quantityOutput')
+      const quantityInput = document.getElementById('quantity')
+      quantityInput
+        .addEventListener('change', e => data.quantity = e.target.value)
+      watch(() => {
+        quantityInput.value = data.quantity
+        quantityOutput.innerText = data.quantity
+      })
+    </script>
+  </body>
+</html>
