@@ -1,0 +1,32 @@
+{
+  "name": "poke-js",
+  "version": "0.1.0",
+  "description": "A small reactivity system",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/shwilliam/poke-js.git"
+  },
+  "keywords": [
+    "reactivity"
+  ],
+  "author": "William L <w-lindvall@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shwilliam/poke-js/issues"
+  },
+  "homepage": "https://github.com/shwilliam/poke-js#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "rollup": "^1.10.1",
+    "rollup-plugin-node-resolve": "^4.2.3"
+  }
+}
