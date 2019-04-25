@@ -3,7 +3,10 @@ module.exports = {
     browser: true,
     es6: true
   },
-  extends: 'standard',
+  extends: [
+    'standard',
+    'plugin:jest/recommended'
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'

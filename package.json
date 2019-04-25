@@ -4,7 +4,8 @@
   "description": "A small reactivity system",
   "main": "dist/index.js",
   "scripts": {
-    "build": "npx rollup -c"
+    "build": "npx rollup -c",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,9 +24,12 @@
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.5.0",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.7.1",
+    "jest-html-reporter": "^2.5.0",
     "rollup": "^1.10.1",
     "rollup-plugin-node-resolve": "^4.2.3"
   }
