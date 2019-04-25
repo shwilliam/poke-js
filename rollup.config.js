@@ -3,6 +3,6 @@ module.exports = {
   output: {
     name: 'Poke',
     file: 'dist/index.js',
-    format: 'iife'
+    format: 'umd'
   }
 }
