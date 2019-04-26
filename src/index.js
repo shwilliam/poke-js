@@ -10,11 +10,9 @@ function Dependency () {
   const updaters = []
 
   const addUpdater = () =>
-    (activeFn && !updaters.includes(activeFn)) &&
-      updaters.push(activeFn)
+    activeFn && !updaters.includes(activeFn) && updaters.push(activeFn)
 
-  const runUpdaters = () =>
-    updaters.forEach(fn => fn())
+  const runUpdaters = () => updaters.forEach(fn => fn())
 
   return { addUpdater, runUpdaters }
 }
@@ -36,30 +34,23 @@ export function init (data) {
     })
   })
 
-  const reactiveEls = Array.from(
-    document.querySelectorAll('[p-data]')
-  )
+  const reactiveEls = Array.from(document.querySelectorAll('[p-data]'))
 
   reactiveEls.forEach(el => {
     const key = el.getAttribute('p-data')
     watch(() => {
-      el.value
-        ? el.value = data[key]
-        : el.innerText = data[key]
+      el.value ? (el.value = data[key]) : (el.innerText = data[key])
     })
   })
 
-  const inputEls = Array.from(
-    document.querySelectorAll('[p-input]')
-  )
+  const inputEls = Array.from(document.querySelectorAll('[p-input]'))
 
   inputEls.forEach(el => {
     const key = el.getAttribute('p-input')
 
-    el
-      .addEventListener('change', e => {
-        data[key] = e.target.value
-      })
+    el.addEventListener('change', e => {
+      data[key] = e.target.value
+    })
   })
 }
 
