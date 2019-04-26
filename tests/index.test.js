@@ -58,4 +58,33 @@ describe('Poke', () => {
       expect(product).toBe(data.numFirst * data.numSecond)
     })
   })
+  describe('p-data', () => {
+    test('data change updates innerText', () => {
+      document.body.innerHTML = `
+        <span p-data="value" id="el" />
+      `
+
+      const data = { value: 2 }
+      init(data)
+
+      const el = document.getElementById('el')
+      expect(el.innerText).toEqual(data.value)
+    })
+  })
+  describe('p-input', () => {
+    test('input change updates data', () => {
+      document.body.innerHTML = `
+        <input p-data="value" id="el" type="number">
+      `
+
+      const data = { value: 2 }
+      init(data)
+
+      const el = document.getElementById('el')
+      const newVal = 4
+      el.value = newVal
+
+      expect(el.value).toEqual(String(newVal))
+    })
+  })
 })
