@@ -35,6 +35,19 @@ export function init (data) {
       }
     })
   })
+
+  const reactiveEls = Array.from(
+    document.querySelectorAll('[p-data]')
+  )
+
+  reactiveEls.forEach(el => {
+    const key = el.getAttribute('p-data')
+    watch(() => {
+      el.value
+        ? el.value = data[key]
+        : el.innerText = data[key]
+    })
+  })
 }
 
 export function watch (fn) {
