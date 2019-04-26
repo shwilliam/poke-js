@@ -33,7 +33,13 @@ The properties of the data passed to `Poke.init()` are also easily bound to the 
 Price: <span p-data="price"></span>
 ```
 
-To see a working example of this, check out [this CodeSandbox](https://codesandbox.io/s/94l470xr3w?autoresize=1&fontsize=12&hidenavigation=1).
+Furthermore, `poke-js` will listen to change events on any element with the `p-data` attribute and reflect the change in the corresponding data value.
+
+```html
+<input p-input="quantity" type="number" />
+```
+
+To see a an example of all of this working together, check out [this CodeSandbox](https://codesandbox.io/s/94l470xr3w?autoresize=1&fontsize=12&hidenavigation=1).
 
 ## Browser compatibility
 
