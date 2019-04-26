@@ -12,9 +12,7 @@ Import `poke-js` by including the following script tag in your HTML:
 <script src="https://unpkg.com/poke-js"></script>
 ```
 
-The functions `init` & `watch` are now available on the global variable `Poke`.
-
-Example:
+The methods `init` & `watch` are now available on the global variable `Poke`.
 
 ```js
 const { init, watch } = Poke
@@ -29,7 +27,13 @@ watch(() => totalOutput.innerText = data.price * data.quantity)
 
 In this example, any changes to the `price` or `quantity` of `data`, will update the DOM element with the id `totalOutput`.
 
-To see this in use, check out [this CodeSandbox](https://codesandbox.io/s/94l470xr3w?autoresize=1&fontsize=12&hidenavigation=1).
+The properties of the data passed to `Poke.init()` are also easily bound to the `value` & `innerText` of DOM elements by using the `p-data` attribute.
+
+```html
+Price: <span p-data="price"></span>
+```
+
+To see a working example of this, check out [this CodeSandbox](https://codesandbox.io/s/94l470xr3w?autoresize=1&fontsize=12&hidenavigation=1).
 
 ## Browser compatibility
 
