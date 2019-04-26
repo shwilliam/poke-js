@@ -48,6 +48,19 @@ export function init (data) {
         : el.innerText = data[key]
     })
   })
+
+  const inputEls = Array.from(
+    document.querySelectorAll('[p-input]')
+  )
+
+  inputEls.forEach(el => {
+    const key = el.getAttribute('p-input')
+
+    el
+      .addEventListener('change', e => {
+        data[key] = e.target.value
+      })
+  })
 }
 
 export function watch (fn) {
