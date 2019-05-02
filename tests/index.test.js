@@ -58,10 +58,10 @@ describe('Poke', () => {
       expect(product).toBe(data.numFirst * data.numSecond)
     })
   })
-  describe('p-data', () => {
+  describe('data-bind', () => {
     test('data change updates innerText', () => {
       document.body.innerHTML = `
-        <span p-data="value" id="el" />
+        <span data-bind="value" id="el" />
       `
 
       const data = { value: 2 }
@@ -71,10 +71,10 @@ describe('Poke', () => {
       expect(el.innerText).toEqual(data.value)
     })
   })
-  describe('p-input', () => {
+  describe('data-input', () => {
     test('input change updates data', () => {
       document.body.innerHTML = `
-        <input p-data="value" id="el" type="number">
+        <input data-bind="value" id="el" type="number">
       `
 
       const data = { value: 2 }

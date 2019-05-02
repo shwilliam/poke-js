@@ -34,19 +34,19 @@ export function init (data) {
     })
   })
 
-  const reactiveEls = Array.from(document.querySelectorAll('[p-data]'))
+  const reactiveEls = Array.from(document.querySelectorAll('[data-bind]'))
 
   reactiveEls.forEach(el => {
-    const key = el.getAttribute('p-data')
+    const key = el.dataset.bind
     watch(() => {
       el.value ? (el.value = data[key]) : (el.innerText = data[key])
     })
   })
 
-  const inputEls = Array.from(document.querySelectorAll('[p-input]'))
+  const inputEls = Array.from(document.querySelectorAll('[data-input]'))
 
   inputEls.forEach(el => {
-    const key = el.getAttribute('p-input')
+    const key = el.dataset.input
 
     el.addEventListener('change', e => {
       data[key] = e.target.value
