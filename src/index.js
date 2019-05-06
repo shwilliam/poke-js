@@ -48,7 +48,7 @@ export function init (data) {
   inputEls.forEach(el => {
     const key = el.dataset.input
 
-    el.addEventListener('change', e => {
+    el.addEventListener('input', e => {
       data[key] = e.target.value
     })
   })
